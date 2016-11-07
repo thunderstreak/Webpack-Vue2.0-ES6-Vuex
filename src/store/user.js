@@ -11,7 +11,7 @@ export default {
          */
         SIGNIN(state, user) {
             sessionStorage.setItem('user', JSON.stringify(user))
-            Object.assign(state, user)
+            Object.assign(state, user)//合并对象
         },
         /**
          * 退出登录
@@ -21,6 +21,15 @@ export default {
         SIGNOUT(state) {
             sessionStorage.removeItem('user')
             Object.keys(state).forEach(k => Vue.delete(state, k))
+        },
+        /**
+        * 计算
+        *
+        * @param
+        *
+        */
+        INCREMENT(state){
+            console.log(state);
         }
     },
     actions: {
@@ -29,6 +38,9 @@ export default {
         },
         SIGNOUT({commit}) {
             commit('SIGNOUT')
+        },
+        INCREMENT({commit}){
+            commit('INCREMENT')
         }
     }
 }
