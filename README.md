@@ -1,4 +1,4 @@
-# vue2.0
+# vue2.000
 
 > A Vue.js project
 
